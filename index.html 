@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Aaron Headley Audio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Corporate A1, A2, RF Coordination, Intercom, Systems, and Production Management by Aaron Headley." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #050509;
+      --bg-alt: #0c0c15;
+      --accent: #ffcc33;
+      --accent-soft: rgba(255, 204, 51, 0.15);
+      --text: #f5f5f7;
+      --muted: #a0a0b2;
+      --border-subtle: #262637;
+      --card-bg: #11111c;
+      --pill-bg: #181824;
+      --danger: #ff4b4b;
+      --max-width: 1100px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--text);
+      background: radial-gradient(circle at top, #181824 0, #050509 55%);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(16px);
+      background: linear-gradient(to bottom, rgba(5,5,9,0.95), rgba(5,5,9,0.6));
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+    }
+
+    .nav-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 1rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo-mark {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .logo-initials {
+      width: 32px;
+      height: 32px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 0.9rem;
+      letter-spacing: 0.04em;
+      background: radial-gradient(circle at top left, #ffcc33, #ff7a18);
+      color: #050509;
+    }
+
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+      font-size: 0.9rem;
+    }
+
+    .logo-text span:first-child {
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+
+    .logo-text span:last-child {
+      font-weight: 500;
+    }
+
+    nav {
+      display: flex;
+      gap: 1.5rem;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.13em;
+    }
+
+    nav a {
+      color: var(--muted);
+      position: relative;
+      padding-bottom: 0.15rem;
+    }
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0%;
+      height: 2px;
+      background: var(--accent);
+      transition: width 0.2s ease-out;
+    }
+
+    nav a:hover {
+      color: var(--text);
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.4rem 0.9rem;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      border: 1px solid rgba(255,204,51,0.5);
+      font-size: 0.8rem;
+      font-weight: 500;
+    }
+
+    .nav-cta span {
+      font-size: 1.1rem;
+    }
+
+    main {
+      flex: 1;
+    }
+
+    .section {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 3rem 1.25rem;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+      gap: 3rem;
+      padding-top: 3rem;
+      padding-bottom: 4rem;
+    }
+
+    .hero-kicker {
+      font-size: 0.85rem;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      color: var(--accent);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .hero-kicker::before {
+      content: "";
+      width: 32px;
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--accent));
+    }
+
+    .hero-title {
+      font-size: clamp(2.4rem, 4vw, 3.1rem);
+      line-height: 1.05;
+      margin: 1rem 0 1.2rem;
+    }
+
+    .hero-title span {
+      display: block;
+    }
+
+    .hero-title span.highlight {
+      color: var(--accent);
+    }
+
+    .hero-subtitle {
+      max-width: 34rem;
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin: 1.5rem 0 2rem;
+    }
+
+    .pill {
+      padding: 0.28rem 0.8rem;
+      border-radius: 999px;
+      background: var(--pill-bg);
+      border: 1px solid rgba(255,255,255,0.06);
+      font-size: 0.75rem;
+      color: var(--muted);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .pill-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: var(--accent);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      align-items: center;
+    }
+
+    .btn-primary,
+    .btn-ghost {
+      padding: 0.7rem 1.3rem;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      cursor: pointer;
+      border: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      text-decoration: none;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #ffcc33, #ff7a18);
+      color: #050509;
+      box-shadow: 0 10px 30px rgba(255,204,51,0.25);
+    }
+
+    .btn-primary:hover {
+      filter: brightness(1.05);
+    }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--muted);
+      border: 1px solid rgba(255,255,255,0.12);
+    }
+
+    .btn-ghost:hover {
+      background: rgba(255,255,255,0.04);
+      color: var(--text);
+    }
+
+    .hero-footnote {
+      margin-top: 1.7rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      align-items: center;
+    }
+
+    .hero-footnote strong {
+      color: var(--text);
+    }
+
+    .hero-footnote span.divider {
+      width: 18px;
+      height: 1px;
+      background: rgba(255,255,255,0.18);
+    }
+
+    .hero-right {
+      position: relative;
+    }
+
+    .card {
+      background: radial-gradient(circle at top left, #1e1e2b, #090912);
+      border-radius: 1.25rem;
+      border: 1px solid rgba(255,255,255,0.05);
+      padding: 1.25rem 1.3rem;
+      box-shadow: 0 22px 40px rgba(0,0,0,0.7);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-image-placeholder {
+      border-radius: 0.9rem;
+      min-height: 260px;
+      background: repeating-linear-gradient(
+        135deg,
+        #181824,
+        #181824 10px,
+        #141420 10px,
+        #141420 20px
+      );
+      border: 1px dashed rgba(255,255,255,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--muted);
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    .hero-meta {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.8rem;
+      margin-top: 1.1rem;
+      font-size: 0.8rem;
+    }
+
+    .meta-item {
+      padding: 0.7rem 0.8rem;
+      border-radius: 0.8rem;
+      border: 1px solid rgba(255,255,255,0.04);
+      background: rgba(8,8,16,0.85);
+    }
+
+    .meta-label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--muted);
+      margin-bottom: 0.25rem;
+    }
+
+    .meta-value {
+      font-weight: 500;
+      font-size: 0.9rem;
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .section-title {
+      font-size: 1.3rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+    }
+
+    .section-kicker {
+      font-size: 0.78rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+      gap: 2.5rem;
+    }
+
+    .about-text {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .about-text p {
+      margin: 0 0 1rem;
+    }
+
+    .about-callout {
+      margin-top: 1rem;
+      padding: 0.9rem 1rem;
+      border-radius: 0.9rem;
+      border: 1px dashed rgba(255,255,255,0.18);
+      background: rgba(12,12,24,0.9);
+      font-size: 0.9rem;
+    }
+
+    .about-meta-card {
+      padding: 1.1rem 1.2rem;
+      border-radius: 1rem;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: linear-gradient(145deg, #101020, #050509);
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      font-size: 0.9rem;
+    }
+
+    .about-meta-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 0.75rem;
+      font-size: 0.82rem;
+    }
+
+    .about-meta-label {
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      font-size: 0.7rem;
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 0.4rem;
+    }
+
+    .tag-chip {
+      font-size: 0.7rem;
+      padding: 0.2rem 0.6rem;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.04);
+      color: var(--muted);
+    }
+
+    .services {
+      background: radial-gradient(circle at top, #181824 0, #050509 60%);
+      border-top: 1px solid rgba(255,255,255,0.04);
+      border-bottom: 1px solid rgba(0,0,0,0.8);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.5rem;
+    }
+
+    .service-card {
+      padding: 1.2rem 1.1rem;
+      border-radius: 1rem;
+      background: rgba(9,9,18,0.96);
+      border: 1px solid var(--border-subtle);
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .service-title {
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    .service-body {
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .service-footer {
+      margin-top: 0.6rem;
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+
+    .service-footer span {
+      color: var(--accent);
+      font-weight: 500;
+    }
+
+    .work-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.4rem;
+    }
+
+    .work-card {
+      padding: 1.1rem 1.1rem;
+      border-radius: 1rem;
+      background: rgba(9,9,18,0.9);
+      border: 1px solid var(--border-subtle);
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+      font-size: 0.87rem;
+    }
+
+    .work-role {
+      font-weight: 600;
+    }
+
+    .work-meta {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .work-description {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-top: 0.4rem;
+    }
+
+    .work-tags {
+      margin-top: 0.6rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+    }
+
+    .contact {
+      padding-bottom: 3.5rem;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 2rem;
+      align-items: flex-start;
+    }
+
+    .contact-card {
+      padding: 1.4rem 1.3rem;
+      border-radius: 1.1rem;
+      background: rgba(9,9,18,0.96);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .contact-card h3 {
+      margin-top: 0;
+      margin-bottom: 0.6rem;
+    }
+
+    .contact-card p {
+      margin-top: 0;
+      margin-bottom: 0.9rem;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .contact-form {
+      display: grid;
+      gap: 0.8rem;
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+      font-size: 0.85rem;
+    }
+
+    .field label {
+      color: var(--muted);
+    }
+
+    .field input,
+    .field textarea {
+      background: rgba(5,5,12,0.9);
+      border: 1px solid rgba(255,255,255,0.14);
+      border-radius: 0.6rem;
+      padding: 0.55rem 0.7rem;
+      color: var(--text);
+      font-family: inherit;
+      font-size: 0.9rem;
+    }
+
+    .field textarea {
+      min-height: 110px;
+      resize: vertical;
+    }
+
+    .field input:focus,
+    .field textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 1px rgba(255,204,51,0.45);
+    }
+
+    .contact-sidebar {
+      font-size: 0.86rem;
+      color: var(--muted);
+    }
+
+    .contact-chip {
+      margin-top: 0.8rem;
+      padding: 0.7rem 0.8rem;
+      border-radius: 0.8rem;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(8,8,16,0.9);
+      font-size: 0.8rem;
+    }
+
+    .contact-sidebar a {
+      color: var(--accent);
+      font-weight: 500;
+    }
+
+    footer {
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding: 1.2rem 1.25rem 1.6rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .footer-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 0.75rem;
+      align-items: center;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 0.9rem;
+    }
+
+    .footer-links a {
+      color: var(--muted);
+    }
+
+    @media (max-width: 960px) {
+      .hero {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 2.5rem;
+      }
+      .hero-right {
+        order: -1;
+      }
+      .about-grid,
+      .services-grid,
+      .work-grid,
+      .contact-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .services-grid {
+        gap: 1.1rem;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .nav-inner {
+        flex-wrap: wrap;
+        gap: 0.8rem;
+      }
+      nav {
+        width: 100%;
+        justify-content: flex-start;
+        overflow-x: auto;
+      }
+      .section {
+        padding-inline: 1rem;
+      }
+      .hero {
+        padding-top: 2.3rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div class="nav-inner">
+        <a href="#top" class="logo-mark">
+          <div class="logo-initials">AH</div>
+          <div class="logo-text">
+            <span>Live / Corporate</span>
+            <span>Aaron Headley Audio</span>
+          </div>
+        </a>
+        <nav>
+          <a href="#about">About</a>
+          <a href="#services">Services</a>
+          <a href="#work">Work</a>
+          <a href="#contact">Contact</a>
+          <a href="#contact" class="nav-cta">
+            <span>●</span>
+            Book a show
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="top">
+      <!-- HERO -->
+      <section class="section hero" aria-labelledby="hero-title">
+        <div>
+          <div class="hero-kicker">Corporate A1 • RF • Systems</div>
+          <h1 class="hero-title" id="hero-title">
+            <span>I help shows</span>
+            <span class="highlight">cut through the noise.</span>
+          </h1>
+          <p class="hero-subtitle">
+            I design, mix, and support live and virtual events so the message lands 
+            clearly the first time—no drama, no surprises, and no missed cues.[web:5]
+          </p>
+
+          <div class="hero-tags">
+            <div class="pill">
+              <span class="pill-dot"></span>
+              Corporate A1 / A2
+            </div>
+            <div class="pill">
+              <span class="pill-dot"></span>
+              RF coordination &amp; intercom
+            </div>
+            <div class="pill">
+              <span class="pill-dot"></span>
+              System design &amp; deployment
+            </div>
+          </div>
+
+          <div class="hero-actions">
+            <a href="#contact" class="btn-primary">
+              Schedule a show brief →
+            </a>
+            <a href="#work" class="btn-ghost">
+              Browse recent work
+            </a>
+          </div>
+
+          <div class="hero-footnote">
+            <span><strong>25+ years</strong> in corporate, broadcast, and live events.[web:5]</span>
+            <span class="divider"></span>
+            <span>Digital consoles, RF, comms, and systems that just work.[web:5]</span>
+          </div>
+        </div>
+
+        <div class="hero-right">
+          <div class="card">
+            <div class="hero-image-placeholder">
+              Image to come
+            </div>
+            <div class="hero-meta">
+              <div class="meta-item">
+                <div class="meta-label">Primary roles</div>
+                <div class="meta-value">
+                  Corporate A1, A2, RFPL, Intercom, Systems[web:5]
+                </div>
+              </div>
+              <div class="meta-item">
+                <div class="meta-label">Based in</div>
+                <div class="meta-value">
+                  NYC Metro • Available to travel[web:5]
+                </div>
+              </div>
+              <div class="meta-item">
+                <div class="meta-label">Specialties</div>
+                <div class="meta-value">
+                  Digital consoles, RF planning, comms, system design[web:5]
+                </div>
+              </div>
+              <div class="meta-item">
+                <div class="meta-label">Tools</div>
+                <div class="meta-value">
+                  Dante, Smaart, Signal Hound, Vectorworks, Riedel[web:5]
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ABOUT -->
+      <section class="section" id="about" aria-labelledby="about-title">
+        <div class="section-header">
+          <h2 class="section-title" id="about-title">About</h2>
+          <div class="section-kicker">Facilitating communication</div>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-text">
+            <p>
+              My mission is simple: facilitate communication. In an information‑saturated 
+              environment, it takes intentional systems and calm execution to make sure 
+              the right people hear the right message at the right time.[web:5]
+            </p>
+            <p>
+              I have spent more than 25 years partnering with marketers, producers, 
+              and technical teams, guiding messaging and deploying the right audio and 
+              comms solutions so executives and presenters can focus on content—not gear.[web:5]
+            </p>
+            <p>
+              I am as comfortable troubleshooting RF in a crowded ballroom as I am 
+              driving a digital console or aligning a PA. The goal is always the same: 
+              clean, intelligible audio and a crew that trusts the plan.[web:5]
+            </p>
+            <div class="about-callout">
+              I work as a freelance audio specialist—Corporate A1, A2, RFPL, system 
+              designer, and production manager—plugging into existing teams and helping 
+              them deliver reliable shows in high‑pressure environments.[web:5]
+            </div>
+          </div>
+
+          <aside class="about-meta-card">
+            <div>
+              <div class="about-meta-label">Core roles</div>
+              <div class="tag-row">
+                <span class="tag-chip">Corporate A1 / A2[web:5]</span>
+                <span class="tag-chip">RF coordination &amp; RFPL[web:5]</span>
+                <span class="tag-chip">Intercom programming[web:5]</span>
+                <span class="tag-chip">System design[web:5]</span>
+                <span class="tag-chip">Production management[web:5]</span>
+              </div>
+            </div>
+
+            <div class="about-meta-row">
+              <div>
+                <div class="about-meta-label">Experience</div>
+                <div>25+ years in audio &amp; events[web:5]</div>
+              </div>
+              <div>
+                <div class="about-meta-label">Location</div>
+                <div>New York City Metro[web:5]</div>
+              </div>
+            </div>
+
+            <div>
+              <div class="about-meta-label">Selected tools</div>
+              <div class="tag-row">
+                <span class="tag-chip">Digital mixing consoles[web:5]</span>
+                <span class="tag-chip">Signal Hound analyzers[web:5]</span>
+                <span class="tag-chip">Riedel / Clear-Com / RTS[web:5]</span>
+                <span class="tag-chip">L‑Acoustics Soundvision[web:5]</span>
+                <span class="tag-chip">Smaart acoustic analysis[web:5]</span>
+                <span class="tag-chip">Vectorworks CAD[web:5]</span>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <!-- SERVICES -->
+      <section class="section services" id="services" aria-labelledby="services-title">
+        <div class="section-header">
+          <h2 class="section-title" id="services-title">Services</h2>
+          <div class="section-kicker">How I plug into teams</div>
+        </div>
+
+        <div class="services-grid">
+          <article class="service-card">
+            <div class="service-title">Corporate A1 / A2</div>
+            <div class="service-body">
+              Primary and secondary audio support for corporate, broadcast, and hybrid 
+              events—console operation, playback, routing, and backstage coordination 
+              so the program feels effortless from the audience.[web:5]
+            </div>
+            <div class="service-footer">
+              Typical scope: <span>general sessions, keynotes, town halls</span>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <div class="service-title">RF &amp; Intercom</div>
+            <div class="service-body">
+              RF planning and coordination using Signal Hound and industry tools, along 
+              with programming and deployment of Riedel, Clear-Com, and RTS systems 
+              to keep crews connected without dropouts.[web:5]
+            </div>
+            <div class="service-footer">
+              Typical scope: <span>RFPL, IEMs, IFB, wired &amp; wireless comms</span>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <div class="service-title">System Design &amp; Support</div>
+            <div class="service-body">
+              System design, modelling, and verification using L‑Acoustics Soundvision, 
+              Smaart, and Vectorworks to ensure coverage, gain‑before‑feedback, and 
+              consistent translation across the room.[web:5]
+            </div>
+            <div class="service-footer">
+              Typical scope: <span>PA design, tuning, show‑ready documentation</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- WORK / EXPERIENCE HIGHLIGHTS -->
+      <section class="section" id="work" aria-labelledby="work-title">
+        <div class="section-header">
+          <h2 class="section-title" id="work-title">Selected Work</h2>
+          <div class="section-kicker">25+ years of shows</div>
+        </div>
+
+        <div class="work-grid">
+          <article class="work-card">
+            <div class="work-role">Audio Specialist • Corporate A1 / A2 / RFPL</div>
+            <div class="work-meta">Freelance • 2004 – Present[web:5]</div>
+            <div class="work-description">
+              Long‑term freelance role supporting corporate, experiential, and live 
+              events as a primary mixer, RF lead, intercom programmer, and systems 
+              resource embedded within client teams.[web:5]
+            </div>
+            <div class="work-tags">
+              <span class="tag-chip">Digital consoles[web:5]</span>
+              <span class="tag-chip">RF coordination[web:5]</span>
+              <span class="tag-chip">Comms &amp; PL design[web:5]</span>
+              <span class="tag-chip">Systems[web:5]</span>
+            </div>
+          </article>
+
+          <article class="work-card">
+            <div class="work-role">Systems &amp; Design Support</div>
+            <div class="work-meta">Various vendors &amp; production partners</div>
+            <div class="work-description">
+              Supporting design and deployment of line arrays and distributed 
+              systems, providing coverage studies, rigging plots, and on‑site 
+              verification so PAs behave predictably under show conditions.[web:5]
+            </div>
+            <div class="work-tags">
+              <span class="tag-chip">L‑Acoustics Soundvision[web:5]</span>
+              <span class="tag-chip">Smaart tuning[web:5]</span>
+              <span class="tag-chip">Vectorworks CAD[web:5]</span>
+            </div>
+          </article>
+
+          <article class="work-card">
+            <div class="work-role">RF &amp; Spectrum Management</div>
+            <div class="work-meta">Conference &amp; multi‑stage events</div>
+            <div class="work-description">
+              Frequency coordination for multi‑room and high‑channel‑count venues 
+              using Signal Hound and manufacturer tools, keeping wireless mics, 
+              IEMs, and comms clean in congested RF environments.[web:5]
+            </div>
+            <div class="work-tags">
+              <span class="tag-chip">Signal Hound analyzers[web:5]</span>
+              <span class="tag-chip">RFPL planning[web:5]</span>
+            </div>
+          </article>
+
+          <article class="work-card">
+            <div class="work-role">Production Management &amp; Client Support</div>
+            <div class="work-meta">Producers, agencies, &amp; end clients</div>
+            <div class="work-description">
+              Acting as a bridge between producers, technical vendors, and talent, 
+              translating show goals into practical technical plans and making sure 
+              comms, audio, and systems all serve the story.[web:5]
+            </div>
+            <div class="work-tags">
+              <span class="tag-chip">Client communication[web:5]</span>
+              <span class="tag-chip">Run‑of‑show detail[web:5]</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section class="section contact" id="contact" aria-labelledby="contact-title">
+        <div class="section-header">
+          <h2 class="section-title" id="contact-title">Work With Me</h2>
+          <div class="section-kicker">Bring me onto your next show</div>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-card">
+            <h3>Project request</h3>
+            <p>
+              Share a few details about your event—location, dates, and what you need 
+              help with (A1, A2, RF, comms, systems, or all of the above)—and I will 
+              follow up with questions and availability.
+            </p>
+
+            <form class="contact-form" action="mailto:you@aaronheadleyaudio.com" method="post" enctype="text/plain">
+              <div class="field">
+                <label for="name">Name</label>
+                <input id="name" name="name" type="text" placeholder="Your name" required />
+              </div>
+              <div class="field">
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" placeholder="you@company.com" required />
+              </div>
+              <div class="field">
+                <label for="details">Show details</label>
+                <textarea id="details" name="details" placeholder="Dates, location, roles needed, and any critical notes."></textarea>
+              </div>
+              <button type="submit" class="btn-primary">
+                Send request →
+              </button>
+            </form>
+          </div>
+
+          <aside class="contact-sidebar">
+            <p>
+              Prefer to start with a quick intro instead of a full brief? Reach out 
+              directly and we can talk through what you are planning and where I 
+              can support your team.
+            </p>
+            <div class="contact-chip">
+              Direct contact:<br />
+              <strong>you@aaronheadleyaudio.com</strong><br />
+              LinkedIn: <a href="https://www.linkedin.com/in/aaron-james-headley-869bb213/" target="_blank" rel="noreferrer">Connect here</a>[web:5]
+            </div>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-inner">
+        <div>© <span id="year"></span> Aaron Headley Audio. All rights reserved.</div>
+        <div class="footer-links">
+          <a href="https://www.linkedin.com/in/aaron-james-headley-869bb213/" target="_blank" rel="noreferrer">LinkedIn</a>[web:5]
+          <a href="#top">Back to top</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
+    
